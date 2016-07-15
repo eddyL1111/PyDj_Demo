@@ -1,0 +1,22 @@
+{% extends 'webapp/header.html' %}
+
+{% block content %}
+<h1>Authentication</h1>
+<br />
+<p>Not registered? <a href='../signup/'>Signup</a></p>
+<br /><br />
+
+<h2>Login</h2>
+<br />
+<form class="form-horizontal" method="POST" action="">
+	{% csrf_token %}
+	{% include 'webapp/includes/fields_template.html' %}
+	
+	<div class="form-group"> 
+    <div class="col-sm-offset-2 col-sm-10">
+      <button type="submit" class="btn btn-success">Submit</button>
+    </div>
+  </div>
+</form>
+{% endblock %}
+

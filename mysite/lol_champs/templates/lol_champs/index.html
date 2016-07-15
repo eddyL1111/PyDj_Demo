@@ -1,0 +1,36 @@
+{% extends "webapp/header.html" %}
+
+{% block content %}
+
+<h2>LOL Champions</h3>
+<p>
+	A simple demo of web scraping the champions in League of Legends.<br />
+	Source: http://leagueoflegends.wikia.com/
+</p>
+<br /><br />
+
+<h3>Free this week!</h3>
+<br />
+{% for data in rotation %}
+<p>
+	<img src="{{data.icon_url}}" alt="{{data.name}}" height="42" width="42"> 
+	<a href="http://leagueoflegends.wikia.com/wiki/{{data.name}}">
+		{{data.name}}
+	</a>
+</p>
+{% endfor %}
+
+<br />
+
+<h3>Champions</h3>
+<br />
+{% for data in roster %}
+<p>
+	<img src="{{data.icon_url}}" alt="{{data.name}}" height="42" width="42"> 
+	<a href="http://leagueoflegends.wikia.com/wiki/{{data.name}}">
+		{{data.name}}
+	</a>
+</p>
+{% endfor %}
+
+{% endblock %}
